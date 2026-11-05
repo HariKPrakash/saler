@@ -1,0 +1,27 @@
+
+import { useEffect, useState } from "react";
+
+function App() {
+  const [message, setMessage] = useState("Loading...");
+
+  useEffect(() => {
+    fetch("/api/hello")
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("API request failed");
+        }
+        return response.json();
+      })
+      .then((data) => setMessage(data.message))
+      .catch(() => setMessage("Could not connect to backend"));
+  }, []);
+
+  return (
+    <main>
+      <h1>React + TypeScript + Docker</h1>
+      <p>{message}</p>
+    </main>
+  );
+}
+
+export default App;

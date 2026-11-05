@@ -1,0 +1,34 @@
+# Dependencies
+node_modules/
+
+# Production Compiled Output
+dist/
+build/
+
+# Local Environment & Secrets
+.env
+.env.local
+
+# Database backups & local data (e.g., SQLite, Prisma migrations)
+*.db
+*.sqlite
+prisma/.env
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+logs/
+*.log
+
+# Docker configurations (to avoid copying the file into itself)
+Dockerfile
+.dockerignore
+
+# IDE & Editor files
+.vscode/
+.idea/
+*.swp
+
+# System files
+.DS_Store
